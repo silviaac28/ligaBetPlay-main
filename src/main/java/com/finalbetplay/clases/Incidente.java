@@ -1,0 +1,9 @@
+package com.finalbetplay.clases;
+
+import java.sql.Time;
+
+public class Incidente {
+    private int id;
+    private String descripcion;
+    private Time minuto;
+}
