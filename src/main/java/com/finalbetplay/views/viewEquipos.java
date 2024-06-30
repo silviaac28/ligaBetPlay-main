@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Equipo;
+import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Jugador;
 
 public class viewEquipos {
@@ -18,6 +19,7 @@ public class viewEquipos {
             System.out.println("3. Listar equipos");
             System.out.println("4. Eliminar equipo");
             System.out.println("5. Agregar jugadores al equipo");
+            System.out.println("6. Agregar estadio al equipo");
 
 
             System.out.println("Selecciona la opción deseada: ");
@@ -48,13 +50,13 @@ public class viewEquipos {
                     System.out.println("Listado de equipos: ");
                     for (String codEquipos : controladorEquipo.equipos.keySet()) {
                         listarEquipos = controladorEquipo.equipos.get(codEquipos);
-                        System.out.println("Codigo: " + codEquipos + " Nombre: " + listarEquipos.getNombre());
+                        System.out.println("Codigo: " + codEquipos + " Nombre: " + listarEquipos.getNombre() + " JUGADOR : " + listarEquipos.getListaJugadores());
                     }
                     break;
 
                 case 5:
                     Jugador listarJugadores = new Jugador();
-                    Equipo listaEquipos = new Equipo();
+                    Equipo equipoSeleccionado = new Equipo();
                     String codigoEquipoSeleccionar = null;
                     String codigoJugadorSeleccionar = null;
                     System.out.println("Ingrese el codigo del equipo al que desea agregar el jugador: ");
@@ -62,13 +64,13 @@ public class viewEquipos {
                     System.out.println("Listado de equipos: ");
 
                     for (String codEquipos : controladorEquipo.equipos.keySet()) {
-                        listaEquipos = controladorEquipo.equipos.get(codEquipos);
-                        System.out.println("Codigo: " + codEquipos + " Nombre: " + listaEquipos.getNombre());
+                        equipoSeleccionado = controladorEquipo.equipos.get(codEquipos);
+                        System.out.println("Codigo: " + codEquipos + " Nombre: " + equipoSeleccionado.getNombre());
                     }
 
                     codigoEquipoSeleccionar = scannerEquipos.nextLine();
-                    listaEquipos = controladorEquipo.equipos.get(codigoEquipoSeleccionar);
-                    System.out.println("Usted ha seleccionado el equipo: " + listaEquipos.getNombre());
+                    equipoSeleccionado = controladorEquipo.equipos.get(codigoEquipoSeleccionar);
+                    System.out.println("Usted ha seleccionado el equipo: " + equipoSeleccionado.getNombre());
                     
 
                     System.out.println("Seleccione el codigo del jugador que desea agregar: ");
@@ -80,10 +82,17 @@ public class viewEquipos {
                     listarJugadores = controladorEquipo.jugadores.get(codigoJugadorSeleccionar);
                     System.out.println("Usted ha seleccionado el jugador: " + listarJugadores.getNombre());
 
-                    // listaEquipos = addJugador(listarJugadores);
+                    equipoSeleccionado.addJugador(listarJugadores);
                     
                     break;
-
+                
+                case 6:
+                    
+                    System.out.println("Esta es la lista de estadios: ");
+                    
+                    for (String codEstadio : controladorEquipo.estadios.keySet()) {
+                        Estadio estadios = new Estadio();
+                    }
 
                 default: 
                 System.out.println("Opción incorrecta. Selecciona una opción válida.");
