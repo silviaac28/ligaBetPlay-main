@@ -9,6 +9,7 @@ import com.finalbetplay.views.viewPartido;
 import com.finalbetplay.views.viewPermiso;
 import com.finalbetplay.views.viewRol;
 import com.finalbetplay.views.viewUsuario;
+import com.finalbetplay.views.viewResultado;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +25,8 @@ public class Main {
             System.out.println("5. GESTION DE ROLES: ");
             System.out.println("6. GESTION DE USUARIOS");
             System.out.println("7. GESTION DE PARTIDOS");
-            System.out.println("8. SALIR");
+            System.out.println("8. GESTION DE RESULTADOS");
+            System.out.println("9. SALIR");
 
 
             System.out.println("\n Cuál es tú eleccion: ");
@@ -70,6 +72,14 @@ public class Main {
 
 
                 case 8:
+                    Controller controlador = new Controller();
+                    viewResultado.controladorResultado = controlador;
+                    viewResultado controladorResultadoView = new viewResultado();
+                    controladorResultadoView.startResultados();
+                    break;
+
+
+                case 9:
                     System.out.println("ADIOS! ");
                     sc.close();
                     System.exit(0);
