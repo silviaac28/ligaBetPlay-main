@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.finalbetplay.views.viewEquipos;
 import com.finalbetplay.views.viewEstadio;
 import com.finalbetplay.views.viewJugador;
+import com.finalbetplay.views.viewPartido;
 import com.finalbetplay.views.viewPermiso;
 import com.finalbetplay.views.viewRol;
 import com.finalbetplay.views.viewUsuario;
@@ -22,7 +23,8 @@ public class Main {
             System.out.println("4. GESTION DE PERMISOS: ");
             System.out.println("5. GESTION DE ROLES: ");
             System.out.println("6. GESTION DE USUARIOS");
-            System.out.println("7. SALIR");
+            System.out.println("7. GESTION DE PARTIDOS");
+            System.out.println("8. SALIR");
 
 
             System.out.println("\n Cuál es tú eleccion: ");
@@ -61,11 +63,19 @@ public class Main {
                     vistaUsuario.startUsuario();
                     break;
 
-                case 7:
+                case 7: 
+                    viewPartido vistaPartido = new viewPartido();
+                    vistaPartido.startPartido();
+                    break;
+
+
+                case 8:
                     System.out.println("ADIOS! ");
                     sc.close();
                     System.exit(0);
                     break;
+
+                
 
                 default:
                     System.out.println("Opción no válida, elige una opción que esté en el menú: ");
