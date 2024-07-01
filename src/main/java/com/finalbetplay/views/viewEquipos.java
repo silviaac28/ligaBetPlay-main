@@ -206,7 +206,7 @@ public class viewEquipos {
                     if (rolEntrenador.getNombre() == "Entrenador") {
                         System.out.println("Cod Entrenador: " + codEntrenadores + " Nombre Entrenador: " + rolEntrenador.getNombre());
                     }else{
-                        System.out.println("No hay entrenadores :c");
+                        System.out.println("No hay entrenadores :cx");
                     }
                 }
 
