@@ -26,6 +26,7 @@ public class Equipo{
         this.listaPartidos = listaPartidos;
     }
 
+
     public void addJugador(Jugador jugador){
         this.listaJugadores.add(jugador);
     }

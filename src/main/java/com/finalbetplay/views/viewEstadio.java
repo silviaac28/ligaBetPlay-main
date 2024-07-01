@@ -59,10 +59,15 @@ public class viewEstadio {
                     }
                     break;
 
+                case 5:
+                    
+                    return;
+
 
                 default:
-                    System.out.println("Opción incorrecta. Seleccione una opción válida.");
-            }
+                    scannerEstadio.close();
+                    break;  
+                }
         }}
 
     }
