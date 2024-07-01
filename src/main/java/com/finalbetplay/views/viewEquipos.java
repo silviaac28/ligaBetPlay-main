@@ -5,6 +5,7 @@ import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Equipo;
 import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Jugador;
+import com.finalbetplay.clases.Partido;
 import com.finalbetplay.clases.Rol;
 
 public class viewEquipos {
@@ -24,7 +25,8 @@ public class viewEquipos {
             System.out.println("5. Agregar jugadores al equipo");
             System.out.println("6. Agregar estadio al equipo");
             System.out.println("7. Agregar entrenador al equipo");
-            System.out.println("8. SALIR. ");
+            System.out.println("8. LISTAR PARTIDOS");
+            System.out.println("9. SALIR. ");
 
             System.out.println("Selecciona la opción deseada: ");
             int choice = scannerEquipos.nextInt();
@@ -220,6 +222,32 @@ public class viewEquipos {
                 break;
 
                 case 8:
+
+                Equipo equipoPartido = new Equipo();
+                String codEquipoPartido = null;
+                System.out.println("LISTA EQUIPOS");
+                
+                for (String codEquiposPartidos : controladorEquipo.equipos.keySet()) {
+                    equipoPartido = controladorEquipo.equipos.get(codEquiposPartidos);
+                    System.out.println("Codigo equipo : " + codEquiposPartidos + " Nombre Equipo: " + equipoPartido.getNombre());
+                }
+                
+                System.out.println("Cuál es el cod del equipo que quieres ver su historial de partidos : ");
+                codEquipoPartido = scannerEquipos.nextLine();
+                equipoPartido = controladorEquipo.equipos.get(codEquipoPartido);
+                
+                    Partido partido = new Partido();
+                    System.out.println("PARTIDOS EN LOS QUE PARTICIPÓ");
+                for (String codPartido : controladorEquipo.partidos.keySet()) {
+                    partido = controladorEquipo.partidos.get(codPartido);
+                    if (equipoPartido.getNombre() == partido.getEquipoLocal() || equipoPartido.getNombre() == partido.getEquipoVisitante() ) {
+                            System.out.println("Equipo Local: " + partido.getEquipoLocal() + " - " + " Equipo Visitante: " + partido.getEquipoVisitante() );
+                    }
+                }
+
+                break;
+
+                case 9:
                 
                     return;
 
