@@ -8,6 +8,7 @@ import com.finalbetplay.views.viewEstadio;
 import com.finalbetplay.views.viewJugador;
 import com.finalbetplay.views.viewNoticiasComunicados;
 import com.finalbetplay.views.viewPartido;
+import com.finalbetplay.views.viewPatrocinio;
 import com.finalbetplay.views.viewPermiso;
 import com.finalbetplay.views.viewRol;
 import com.finalbetplay.views.viewUsuario;
@@ -30,7 +31,8 @@ public class Main {
             System.out.println("8. GESTION DE RESULTADOS");
             System.out.println("9. GESTION DE COMUNICACIONES");
             System.out.println("10. GESTION DE ENTRADAS");
-            System.out.println("11. SALIR");
+            System.out.println("11. GESTION DE PATROCINIOS");
+            System.out.println("12. SALIR");
 
 
             System.out.println("\n Cuál es tú eleccion: ");
@@ -91,6 +93,10 @@ public class Main {
                     vistaEntradas.startEntradas();
 
                 case 11:
+                    viewPatrocinio vistaPatrocinios = new viewPatrocinio();
+                    vistaPatrocinios.startPatrocinio();
+
+                case 12:
                     System.out.println("ADIOS! ");
                     sc.close();
                     System.exit(0);
