@@ -24,19 +24,19 @@ public class Main {
             ConsoleUtils.cleanScreen();
             System.out.println("-------LIGA BETPLAY-------- \n ");
             System.out.println("BIENVENIDO A LA LIGA BET PLAY! \n");
-            System.out.println("1. GESTION DE EQUIPOS: ");
-            System.out.println("2. GESTION DE ESTADIOS: ");
-            System.out.println("3. GESTION DE JUGADORES: ");
-            System.out.println("4. GESTION DE PERMISOS: ");
-            System.out.println("5. GESTION DE ROLES: ");
+            System.out.println("1. GESTION DE EQUIPOS ");
+            System.out.println("2. GESTION DE ESTADIOS ");
+            System.out.println("3. GESTION DE JUGADORES ");
+            System.out.println("4. GESTION DE PERMISOS ");
+            System.out.println("5. GESTION DE ROLES ");
             System.out.println("6. GESTION DE USUARIOS");
             System.out.println("7. GESTION DE PARTIDOS");
             System.out.println("8. GESTION DE RESULTADOS");
             System.out.println("9. GESTION DE COMUNICACIONES");
             System.out.println("10. GESTION DE ENTRADAS");
             System.out.println("11. GESTION DE PATROCINIOS");
-            System.out.println("12. GESTION DE ENTRENADORESSSSSSSSSSSS");
-            System.out.println("13. GESTION DE ENTRENADORESSSSSSSSSSSS");
+            System.out.println("12. GESTION DE ENTRENADORES");
+            System.out.println("13. SALIR");
 
 
 
@@ -92,14 +92,17 @@ public class Main {
                 case 9:
                     viewNoticiasComunicados vistaNoticiasComunicados = new viewNoticiasComunicados();
                     vistaNoticiasComunicados.startNotCom();
+                    break;
 
                 case 10:
                     viewEntradas vistaEntradas = new viewEntradas();
                     vistaEntradas.startEntradas();
+                    break;
 
                 case 11:
                     viewPatrocinio vistaPatrocinios = new viewPatrocinio();
                     vistaPatrocinios.startPatrocinio();
+                    break;
 
                 case 12:
                     System.out.println("ADIOS! ");

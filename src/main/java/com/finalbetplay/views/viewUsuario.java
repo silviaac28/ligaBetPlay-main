@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Rol;
 import com.finalbetplay.clases.Usuario;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewUsuario {
 
@@ -15,9 +16,14 @@ public class viewUsuario {
         Scanner scannerUsuario = new Scanner(System.in);
 
         while (true) {
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION USUARIOS-----\n");
+
             System.out.println("1. Crear Usuario: ");
             System.out.println("2. Listar Usuarios: ");
-            System.out.println("3. Salir: ");
+            System.out.println("3. Salir al menú principal \n ");
 
             System.out.println("Selecciona la opción : ");
             int choice = scannerUsuario.nextInt();

@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Entrada;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewEntradas {
 
@@ -17,10 +18,14 @@ public class viewEntradas {
         Scanner scannerEntradas = new Scanner(System.in);
 
         while (true) {
-            
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION ENTRADAS-----\n");
+
             System.out.println("1. Comprar Entrada");
             System.out.println("2. Listar Boletas");
-            System.out.println("3. Salir");
+            System.out.println("3. Salir al menú principal \n ");
 
             System.out.println("Elige una opción: ");
             int choice = scannerEntradas.nextInt();

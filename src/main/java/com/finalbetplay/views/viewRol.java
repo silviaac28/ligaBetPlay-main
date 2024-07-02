@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Permiso;
 import com.finalbetplay.clases.Rol;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewRol {
 
@@ -15,10 +16,15 @@ public class viewRol {
         Scanner scannerRol = new Scanner(System.in);
 
         while (true) {
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION ROLES-----\n");
+
             System.out.println("1. Agregar un Rol: ");
             System.out.println("2. Listar Roles: ");
             System.out.println("3. Agregar Permiso a Rol: ");
-            System.out.println("4. Salir: ");
+            System.out.println("4. Salir al menú principal \n ");
 
             System.out.println("Cuál es la eleccion: ");
             int choice = scannerRol.nextInt();

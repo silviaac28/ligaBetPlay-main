@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Permiso;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewPermiso {
 
@@ -14,10 +15,14 @@ public class viewPermiso {
         Scanner scannerPermisos = new Scanner(System.in);
 
         while (true) {
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION PERMISOS-----\n");
             
             System.out.println("1. Agregar un permiso");
             System.out.println("2. Ver permisos");
-            System.out.println("3. Salir");
+            System.out.println("3. Salir al menú principal \n ");
 
             int choice = scannerPermisos.nextInt();
             scannerPermisos.nextLine();

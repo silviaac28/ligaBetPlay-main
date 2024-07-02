@@ -22,8 +22,7 @@ public class viewEstadio {
             System.out.println("2. Editar estadio ");
             System.out.println("3. Eliminar estadio ");
             System.out.println("4. Visualizar estadio ");
-            System.out.println("5. Volver al menú principal");
-
+            System.out.println("5. Salir al menú principal \n ");
 
             System.out.println("Seleccione la opción deseada: ");
             int choice = scannerEstadio.nextInt();

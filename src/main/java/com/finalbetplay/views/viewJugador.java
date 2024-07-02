@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.finalbetplay.Controller;
 import com.finalbetplay.Main;
 import com.finalbetplay.clases.Jugador;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewJugador {
     public static Controller controladorJugador;
@@ -12,11 +13,16 @@ public class viewJugador {
     public void startJugador(){
         Scanner scannerJugador = new Scanner(System.in);
         while (true) { 
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION JUGADORES-----\n");
+
             System.out.println("1. Agregar jugador");
             System.out.println("2. Actualizar jugador");
             System.out.println("3. Listar jugadores");
             System.out.println("4. Eliminar jugador");
-            System.out.println("5. Volver");
+            System.out.println("5. Salir al menù principal \n ");
 
             System.out.println("Selecciona la opción deseada: ");
             int choice = scannerJugador.nextInt();
