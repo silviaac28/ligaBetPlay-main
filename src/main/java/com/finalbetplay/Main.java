@@ -2,6 +2,7 @@ package com.finalbetplay;
 
 import java.util.Scanner;
 
+import com.finalbetplay.utils.ConsoleUtils;
 import com.finalbetplay.views.viewEntradas;
 import com.finalbetplay.views.viewEquipos;
 import com.finalbetplay.views.viewEstadio;
@@ -10,9 +11,9 @@ import com.finalbetplay.views.viewNoticiasComunicados;
 import com.finalbetplay.views.viewPartido;
 import com.finalbetplay.views.viewPatrocinio;
 import com.finalbetplay.views.viewPermiso;
+import com.finalbetplay.views.viewResultado;
 import com.finalbetplay.views.viewRol;
 import com.finalbetplay.views.viewUsuario;
-import com.finalbetplay.views.viewResultado;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +21,9 @@ public class Main {
         Scanner sc  = new Scanner(System.in);
 
         while(true){
-            System.out.println("LIGA BETPLAY \n ");
+            ConsoleUtils.cleanScreen();
+            System.out.println("-------LIGA BETPLAY-------- \n ");
+            System.out.println("BIENVENIDO A LA LIGA BET PLAY! \n");
             System.out.println("1. GESTION DE EQUIPOS: ");
             System.out.println("2. GESTION DE ESTADIOS: ");
             System.out.println("3. GESTION DE JUGADORES: ");
@@ -35,7 +38,7 @@ public class Main {
             System.out.println("12. SALIR");
 
 
-            System.out.println("\n Cuál es tú eleccion: ");
+            System.out.println("\nElige la opción deseada: ");
             int choice = sc.nextInt();
 
             switch (choice) {

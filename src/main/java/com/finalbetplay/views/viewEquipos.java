@@ -7,6 +7,7 @@ import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Jugador;
 import com.finalbetplay.clases.Partido;
 import com.finalbetplay.clases.Rol;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewEquipos {
 
@@ -18,6 +19,10 @@ public class viewEquipos {
 
         while (true){
 
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION EQUIPOS-----\n");
+
             System.out.println("1. Agregar equipo");
             System.out.println("2. Actualizar equipo");
             System.out.println("3. Listar equipos");
@@ -26,7 +31,7 @@ public class viewEquipos {
             System.out.println("6. Agregar estadio al equipo");
             System.out.println("7. Agregar entrenador al equipo");
             System.out.println("8. LISTAR PARTIDOS");
-            System.out.println("9. SALIR. ");
+            System.out.println("9. Salir al menú principal \n ");
 
             System.out.println("Selecciona la opción deseada: ");
             int choice = scannerEquipos.nextInt();
