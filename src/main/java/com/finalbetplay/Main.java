@@ -38,7 +38,7 @@ public class Main {
             System.out.println("12. SALIR");
 
 
-            System.out.println("\nElige la opción deseada: ");
+            System.out.println("\nElige la opción deseada:  ");
             int choice = sc.nextInt();
 
             switch (choice) {
