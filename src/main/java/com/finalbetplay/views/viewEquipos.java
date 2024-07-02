@@ -69,7 +69,7 @@ public class viewEquipos {
                     String codEquipoActualizar = null;
                     Estadio estadiosActualizar = new Estadio();
 
-                    System.out.println("Cuál es el código del equipo que deseas actualizar los datos :  ");
+                    System.out.println("Cuál es el código del equipo que deseas actualizar los datos :");
                     codEquipoActualizar = scannerEquipos.nextLine();
                     equipoActualizar = controladorEquipo.equipos.get(codEquipoActualizar);
 
