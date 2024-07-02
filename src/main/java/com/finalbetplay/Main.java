@@ -35,7 +35,7 @@ public class Main {
             System.out.println("9. GESTION DE COMUNICACIONES");
             System.out.println("10. GESTION DE ENTRADAS");
             System.out.println("11. GESTION DE PATROCINIOS");
-            System.out.println("12. HOLIS");
+            System.out.println("12. SALIR");
 
 
             System.out.println("\nElige la opción deseada:  ");
