@@ -3,6 +3,7 @@ package com.finalbetplay.clases;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Equipo{
     private int id;
     private String nombre;
