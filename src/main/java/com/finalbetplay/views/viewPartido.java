@@ -10,6 +10,7 @@ import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Equipo;
 import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Partido;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewPartido {
     public static Controller controladorPartido;
@@ -20,11 +21,16 @@ public class viewPartido {
         SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
 
         while (true) {
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION PARTIDOS-----\n");
+
             System.out.println("1. Agregar nuevo partido");
             System.out.println("2. Editar partido");
             System.out.println("3. Eliminar partido");
             System.out.println("4. Mostrar partidos");
-            System.out.println("5. Volver al menú principal");
+            System.out.println("5. Volver al menú principal \n ");
 
             System.out.println("Selecciona la opción deseada: ");
             int choice = scannerPartidos.nextInt();
