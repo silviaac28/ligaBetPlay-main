@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Estadio;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewEstadio {
     public static Controller controladorEstadio;
@@ -12,6 +13,11 @@ public class viewEstadio {
         Scanner scannerEstadio = new Scanner(System.in);
 
         while (true) { 
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION ESTADIOS-----\n");
+
             System.out.println("1. Agregar estadio ");
             System.out.println("2. Editar estadio ");
             System.out.println("3. Eliminar estadio ");
