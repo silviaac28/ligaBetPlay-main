@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Patrocinador;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewPatrocinio {
     public static Controller controladorPatrocinador;
@@ -16,11 +17,16 @@ public class viewPatrocinio {
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
         while (true) {
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION PATROCINIOS-----\n");
+
             System.out.println("1. Agregar nuevo patrocinio");
             System.out.println("2. Editar patrocinio");
             System.out.println("3. Eliminar patrocinio");
             System.out.println("4. Mostrar patrocinios");
-            System.out.println("5. Volver al menú principal");
+            System.out.println("5. Salir al menú principal \n ");
 
             System.out.println("Selecciona la opción deseada: ");
             int choice = scannerPatrocinador.nextInt();
@@ -146,8 +152,6 @@ public class viewPatrocinio {
                     break;
 
                 case 5:
-                    System.out.println("Volviendo al menú principal...");
-                    scannerPatrocinador.close();
                     return;
 
                 default:

@@ -9,6 +9,7 @@ import com.finalbetplay.clases.Jugador;
 import com.finalbetplay.clases.Partido;
 import com.finalbetplay.clases.Resultado;
 import com.finalbetplay.clases.Tarjeta;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewResultado {
 
@@ -21,11 +22,17 @@ public class viewResultado {
         SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
 
         while (true) {
+
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION RESULTADOS-----\n");
+
             System.out.println("1. Ingresar nuevo resultado");
             System.out.println("2. Ingresar tarjetas del partido");
             System.out.println("3. Editar resultado");
             System.out.println("4. Visualizar resultados");
-            System.out.println("5. Salir al menú principal");
+            System.out.println("5. Salir al menú principal \n ");
+
             System.out.println("Selecciona la opción deseada: ");
             int choice = scannerResultados.nextInt();
             scannerResultados.nextLine();
@@ -155,8 +162,6 @@ public class viewResultado {
                     break;
 
                 case 5:
-                    System.out.println("Saliendo al menú principal...");
-                    scannerResultados.close();
                     return;
 
                 default:

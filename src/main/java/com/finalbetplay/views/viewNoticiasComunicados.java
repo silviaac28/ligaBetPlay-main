@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Comunicacion;
+import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewNoticiasComunicados {
 
@@ -18,11 +19,15 @@ public class viewNoticiasComunicados {
 
         while (true) {
             
-            System.out.println("1. AGREGAR NOTICIA / COMUNICADO");
-            System.out.println("2. LISTAR NOTICIA / COMUNICADO");
-            System.out.println("3. EDITAR NOTICIA / COMUNICADO");
-            System.out.println("4. ELIMINAR NOTICIA / COMUNICADO");
-            System.out.println("5. SALIR");
+            ConsoleUtils.cleanScreen();
+
+            System.out.println("\n-----MENÚ GESTION COMUNICADOS-----\n");
+
+            System.out.println("1. Agregar Noticia / Comunicado");
+            System.out.println("2. Listar Noticia / Comunicado");
+            System.out.println("3. Editar Noticia / Comunicado");
+            System.out.println("4. Eliminar Noticia / Comunicado");
+            System.out.println("5. Salir al menú principal \n ");
 
             int choice = scannerNotCom.nextInt();
             scannerNotCom.nextLine();
@@ -127,6 +132,9 @@ public class viewNoticiasComunicados {
                     System.out.println("Usted ha eliminado la comunicación con el titulo: " + comunicacionEliminar.getTitulo());
 
                     break;
+
+                case 5:
+                    return;
 
                 default:
                     break;
