@@ -10,7 +10,7 @@ import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Equipo;
 import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Partido;
-import com.finalbetplay.utils.ConsoleUtils;
+
 
 public class viewPartido {
     public static Controller controladorPartido;
@@ -22,7 +22,6 @@ public class viewPartido {
 
         while (true) {
 
-            ConsoleUtils.cleanScreen();
 
             System.out.println("\n-----MENÚ GESTION PARTIDOS-----\n");
 
@@ -121,6 +120,50 @@ public class viewPartido {
                     System.out.println("Partido agregado exitosamente.");
 
                     break;
+
+                case 2:
+                    Partido partidos1 = new Partido();
+                    Equipo equipos1 = new Equipo();
+                    Estadio estadios1 = new Estadio();
+                    Equipo listarEquipos2 = new Equipo();
+                    Equipo listarEquipos3 = new Equipo();
+                    Estadio listarEstadios1 = new Estadio();
+                    String codigoPartido1 = null;
+                    String codigoEquipoSeleccionar1New = null;
+                    String codigoEquipoSeleccionar2New = null;
+                    String codigoEstadioSeleccionadoNew = null;
+                    System.out.println("Ingrese el código del partido que desea editar: ");
+                    String codigoEditar = scannerPartidos.nextLine();
+                    if (!controladorPartido.partidos.containsKey(codigoEditar)) {
+                        System.out.println("No se encontró el partido con el código ingresado.");
+                        break;
+                    }
+
+                    Partido partidoEditar = controladorPartido.partidos.get(codigoEditar);
+
+                    // SELECCION DE EQUIPOS PARTICIPANTESS
+                    System.out.println("-------------------------");
+                    System.out.println("LISTADO DE EQUIPOS: ");
+                    for (String codEquipos : controladorPartido.equipos.keySet()) {
+                        listarEquipos = controladorPartido.equipos.get(codEquipos);
+                        System.out.println("Codigo: " + codEquipos + " Nombre: " + listarEquipos.getNombre());
+                    }
+                    System.out.println("-------------------------");
+                    
+                    System.out.println("Ingrese el codigo del nuevo equipo que jugará de local: ");
+                    codigoEquipoSeleccionar1 = scannerPartidos.nextLine();
+                    listarEquipos = controladorPartido.equipos.get(codigoEquipoSeleccionar1);
+                    System.out.println("Usted ha seleccionado el equipo: " + listarEquipos.getNombre());
+                    partidos1.setEquipoLocal(listarEquipos.getNombre());
+
+                    System.out.println("Ingrese el codigo del nuevo equipo que jugará de visitante: ");
+                    codigoEquipoSeleccionar2 = scannerPartidos.nextLine();
+                    listarEquipos1 = controladorPartido.equipos.get(codigoEquipoSeleccionar2);
+                    System.out.println("Usted ha seleccionado el equipo: " + listarEquipos1.getNombre());
+                    partidos1.setEquipoVisitante(listarEquipos1.getNombre());
+
+                 
+
 
                 case 4:
                     System.out.println("-------------------------");
