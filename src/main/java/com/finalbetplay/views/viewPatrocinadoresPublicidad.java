@@ -9,7 +9,7 @@ import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Patrocinador;
 import com.finalbetplay.utils.ConsoleUtils;
 
-public class viewPatrocinio {
+public class viewPatrocinadoresPublicidad {
     public static Controller controladorPatrocinador;
 
     public void startPatrocinio() {
@@ -20,12 +20,12 @@ public class viewPatrocinio {
 
             ConsoleUtils.cleanScreen();
 
-            System.out.println("\n-----MENÚ GESTION PATROCINIOS-----\n");
+            System.out.println("\n-----MENÚ GESTION PATROCINADORES Y PUBLICIDAD-----\n");
 
-            System.out.println("1. Agregar nuevo patrocinio");
-            System.out.println("2. Editar patrocinio");
-            System.out.println("3. Eliminar patrocinio");
-            System.out.println("4. Mostrar patrocinios");
+            System.out.println("1. Agregar nuevo patrocinador");
+            System.out.println("2. Editar patrocinador");
+            System.out.println("3. Eliminar patrocinador");
+            System.out.println("4. Mostrar patrocinadores");
             System.out.println("5. Salir al menú principal \n ");
 
             System.out.println("Selecciona la opción deseada: ");
@@ -50,7 +50,7 @@ public class viewPatrocinio {
 
                     // FECHA PATROCINIO
                     while (true) {
-                        System.out.println("Ingrese la fecha de inicio del patrocinio (DD/MM/AAAA): ");
+                        System.out.println("Ingrese la fecha de inicio del contrato (DD/MM/AAAA): ");
                         String fechaInicio = scannerPatrocinador.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(fechaInicio);
@@ -62,7 +62,7 @@ public class viewPatrocinio {
                     }
 
                     while (true) {
-                        System.out.println("Ingrese la fecha de fin del patrocinio (DD/MM/AAAA): ");
+                        System.out.println("Ingrese la fecha de fin del contrato (DD/MM/AAAA): ");
                         String fechaFin = scannerPatrocinador.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(fechaFin);
@@ -98,7 +98,7 @@ public class viewPatrocinio {
 
                     // AQUI SE EDITAN LAS FECHAS
                     while (true) {
-                        System.out.println("Ingrese la nueva fecha de inicio del patrocinio (actual: " + dateFormatter.format(patrocinadorEditar.getFechaInicio()) + ", formato DD/MM/AAAA): ");
+                        System.out.println("Ingrese la nueva fecha de inicio del contrato (actual: " + dateFormatter.format(patrocinadorEditar.getFechaInicio()) + ", formato DD/MM/AAAA): ");
                         String nuevaFechaInicio = scannerPatrocinador.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(nuevaFechaInicio);
@@ -110,7 +110,7 @@ public class viewPatrocinio {
                     }
 
                     while (true) {
-                        System.out.println("Ingrese la nueva fecha de fin del patrocinio (actual: " + dateFormatter.format(patrocinadorEditar.getFechaFin()) + ", formato DD/MM/AAAA): ");
+                        System.out.println("Ingrese la nueva fecha de fin del contrato (actual: " + dateFormatter.format(patrocinadorEditar.getFechaFin()) + ", formato DD/MM/AAAA): ");
                         String nuevaFechaFin = scannerPatrocinador.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(nuevaFechaFin);
@@ -136,7 +136,7 @@ public class viewPatrocinio {
 
                 case 4:
                     System.out.println("-------------------------");
-                    System.out.println("Lista de Patrocinios:");
+                    System.out.println("LISTA DE PATROCINADORES:");
                     for (String codigo : controladorPatrocinador.patrocinadores.keySet()) {
                         Patrocinador p = controladorPatrocinador.patrocinadores.get(codigo);
                         System.out.println("-------------------------");

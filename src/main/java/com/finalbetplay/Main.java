@@ -9,7 +9,7 @@ import com.finalbetplay.views.viewEstadio;
 import com.finalbetplay.views.viewJugador;
 import com.finalbetplay.views.viewNoticiasComunicados;
 import com.finalbetplay.views.viewPartido;
-import com.finalbetplay.views.viewPatrocinio;
+import com.finalbetplay.views.viewPatrocinadoresPublicidad;
 import com.finalbetplay.views.viewPermiso;
 import com.finalbetplay.views.viewResultado;
 import com.finalbetplay.views.viewRol;
@@ -36,7 +36,8 @@ public class Main {
             System.out.println("10. GESTION DE ENTRADAS");
             System.out.println("11. GESTION DE PATROCINIOS");
             System.out.println("12. GESTION DE ENTRENADORES");
-            System.out.println("13. SALIR");
+            System.out.println("24. GESTION DE PATROCINADORES Y PUBLICIDAD");
+            System.out.println("26. SALIR");
 
 
 
@@ -100,17 +101,20 @@ public class Main {
                     break;
 
                 case 11:
-                    viewPatrocinio vistaPatrocinios = new viewPatrocinio();
+                    
+
+                case 24:
+                    viewPatrocinadoresPublicidad vistaPatrocinios = new viewPatrocinadoresPublicidad();
                     vistaPatrocinios.startPatrocinio();
                     break;
 
-                case 12:
+                case 26:
                     System.out.println("ADIOS! ");
                     sc.close();
                     System.exit(0);
                     break;
 
-                
+
 
                 default:
                     System.out.println("Opción no válida, elige una opción que esté en el menú: ");
