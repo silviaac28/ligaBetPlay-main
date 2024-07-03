@@ -12,7 +12,7 @@ import com.finalbetplay.utils.ConsoleUtils;
 public class viewPatrocinadoresPublicidad {
     public static Controller controladorPatrocinador;
 
-    public void startPatrocinio() {
+    public void startPatrocinador() {
         Scanner scannerPatrocinador = new Scanner(System.in);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -34,6 +34,9 @@ public class viewPatrocinadoresPublicidad {
 
                 switch (choice) {
                 case 1:
+
+                    ConsoleUtils.cleanScreen();
+
                     Patrocinador patrocinadores = new Patrocinador();
                     System.out.println("Ingrese el código del patrocinador: ");
                     String codigoPatrocinador = scannerPatrocinador.nextLine();
@@ -75,9 +78,15 @@ public class viewPatrocinadoresPublicidad {
 
                     controladorPatrocinador.patrocinadores.put(codigoPatrocinador, patrocinadores);
                     System.out.println("Patrocinador agregado exitosamente.");
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 2:
+
+                    ConsoleUtils.cleanScreen();
+
                     System.out.println("Ingrese el código del patrocinador que desea editar: ");
                     String codigoEditar = scannerPatrocinador.nextLine();
                     if (!controladorPatrocinador.patrocinadores.containsKey(codigoEditar)) {
@@ -122,9 +131,15 @@ public class viewPatrocinadoresPublicidad {
                     }
 
                     System.out.println("Patrocinador editado exitosamente.");
+
+                    ConsoleUtils.pause(); 
+
                     break;
 
                 case 3:
+
+                    ConsoleUtils.cleanScreen();
+
                     System.out.println("Ingrese el código del patrocinador que desea eliminar: ");
                     String codigoEliminar = scannerPatrocinador.nextLine();
                     if (controladorPatrocinador.patrocinadores.remove(codigoEliminar) != null) {
@@ -132,9 +147,14 @@ public class viewPatrocinadoresPublicidad {
                     } else {
                         System.out.println("No se encontró el patrocinador con el código ingresado.");
                     }
+
+                    ConsoleUtils.pause(); 
                     break;
 
                 case 4:
+
+                    ConsoleUtils.cleanScreen();
+
                     System.out.println("-------------------------");
                     System.out.println("LISTA DE PATROCINADORES:");
                     for (String codigo : controladorPatrocinador.patrocinadores.keySet()) {
@@ -149,6 +169,7 @@ public class viewPatrocinadoresPublicidad {
                         System.out.println("Fecha de fin: " + dateFormatter.format(p.getFechaFin()));
                         System.out.println("-------------------------");
                     }
+                    ConsoleUtils.pause(); 
                     break;
 
                 case 5:

@@ -10,6 +10,7 @@ import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Jugador;
 import com.finalbetplay.clases.Partido;
 import com.finalbetplay.clases.Patrocinador;
+import com.finalbetplay.clases.Patrocinio;
 import com.finalbetplay.clases.Permiso;
 import com.finalbetplay.clases.Resultado;
 import com.finalbetplay.clases.Rol;
@@ -30,6 +31,8 @@ public class Controller {
     public static Hashtable <String, Comunicacion> comunicaciones = new Hashtable<>();
     public ArrayList<Tarjeta> tarjetas = new ArrayList<>();
     public static Hashtable <String, Patrocinador> patrocinadores = new Hashtable<>();
+    public static Hashtable <String, Patrocinio> patrocinios = new Hashtable<>();
+
 
 
         

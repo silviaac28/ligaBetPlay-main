@@ -10,6 +10,7 @@ import com.finalbetplay.views.viewJugador;
 import com.finalbetplay.views.viewNoticiasComunicados;
 import com.finalbetplay.views.viewPartido;
 import com.finalbetplay.views.viewPatrocinadoresPublicidad;
+import com.finalbetplay.views.viewPatrocinios;
 import com.finalbetplay.views.viewPermiso;
 import com.finalbetplay.views.viewResultado;
 import com.finalbetplay.views.viewRol;
@@ -101,11 +102,14 @@ public class Main {
                     break;
 
                 case 11:
+                    viewPatrocinios vistaPatrocinios = new viewPatrocinios();
+                    vistaPatrocinios.startPatrocinio();
+                    break;
                     
 
                 case 24:
-                    viewPatrocinadoresPublicidad vistaPatrocinios = new viewPatrocinadoresPublicidad();
-                    vistaPatrocinios.startPatrocinio();
+                    viewPatrocinadoresPublicidad vistaPatrocinadores = new viewPatrocinadoresPublicidad();
+                    vistaPatrocinadores.startPatrocinador();
                     break;
 
                 case 26:

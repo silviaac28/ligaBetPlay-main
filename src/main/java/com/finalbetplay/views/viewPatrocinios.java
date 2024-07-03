@@ -6,56 +6,59 @@ import java.util.Date;
 import java.util.Scanner;
 
 import com.finalbetplay.Controller;
-import com.finalbetplay.clases.Patrocinador;
+import com.finalbetplay.clases.Patrocinio;
 import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewPatrocinios {
 
-    public static Controller controladorPatrocin;
+    public static Controller controladorPatrocinio;
 
     public void startPatrocinio() {
-        Scanner scannerPatrocinador = new Scanner(System.in);
+        Scanner scannerPatrocinio = new Scanner(System.in);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
         while (true) {
 
             ConsoleUtils.cleanScreen();
 
-            System.out.println("\n-----MENÚ GESTION PATROCINADORES Y PUBLICIDAD-----\n");
+            System.out.println("\n-----MENÚ GESTION PATROCINIOS-----\n");
 
-            System.out.println("1. Agregar nuevo patrocinador");
-            System.out.println("2. Editar patrocinador");
-            System.out.println("3. Eliminar patrocinador");
-            System.out.println("4. Mostrar patrocinadores");
+            System.out.println("1. Agregar nuevo patrocinio");
+            System.out.println("2. Editar patrocinio");
+            System.out.println("3. Eliminar patrocinio");
+            System.out.println("4. Mostrar patrocinios");
             System.out.println("5. Salir al menú principal \n ");
 
             System.out.println("Selecciona la opción deseada: ");
-            int choice = scannerPatrocinador.nextInt();
-            scannerPatrocinador.nextLine();
+            int choice = scannerPatrocinio.nextInt();
+            scannerPatrocinio.nextLine();
 
                 switch (choice) {
                 case 1:
-                    Patrocinador patrocinadores = new Patrocinador();
-                    System.out.println("Ingrese el código del patrocinador: ");
-                    String codigoPatrocinador = scannerPatrocinador.nextLine();
-                    System.out.println("Ingrese el ID del patrocinador: ");
-                    patrocinadores.setId(scannerPatrocinador.nextInt());
-                    scannerPatrocinador.nextLine();
-                    System.out.println("Ingrese el nombre del patrocinador: ");
-                    patrocinadores.setNombre(scannerPatrocinador.nextLine());
+
+                    ConsoleUtils.cleanScreen();
+
+                    Patrocinio patrocinios = new Patrocinio();
+                    System.out.println("Ingrese el código del patrocinio: ");
+                    String codigoPatrocinio = scannerPatrocinio.nextLine();
+                    System.out.println("Ingrese el ID del patrocinio: ");
+                    patrocinios.setId(scannerPatrocinio.nextInt());
+                    scannerPatrocinio.nextLine();
+                    System.out.println("Ingrese el nombre del patrocinio: ");
+                    patrocinios.setNombre(scannerPatrocinio.nextLine());
                     System.out.println("Ingrese el tipo de patrocinio: ");
-                    patrocinadores.setTipo(scannerPatrocinador.nextLine());
+                    patrocinios.setTipo(scannerPatrocinio.nextLine());
                     System.out.println("Ingrese el monto del patrocinio: ");
-                    patrocinadores.setMonto(scannerPatrocinador.nextDouble());
-                    scannerPatrocinador.nextLine(); // Consumir el salto de línea
+                    patrocinios.setMonto(scannerPatrocinio.nextDouble());
+                    scannerPatrocinio.nextLine(); // Consumir el salto de línea
 
                     // FECHA PATROCINIO
                     while (true) {
-                        System.out.println("Ingrese la fecha de inicio del contrato (DD/MM/AAAA): ");
-                        String fechaInicio = scannerPatrocinador.nextLine();
+                        System.out.println("Ingrese la fecha de inicio del patrocinio (DD/MM/AAAA): ");
+                        String fechaInicio = scannerPatrocinio.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(fechaInicio);
-                            patrocinadores.setFechaInicio(fecha);
+                            patrocinios.setFechaInicio(fecha);
                             break;
                         } catch (ParseException e) {
                             System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
@@ -63,47 +66,53 @@ public class viewPatrocinios {
                     }
 
                     while (true) {
-                        System.out.println("Ingrese la fecha de fin del contrato (DD/MM/AAAA): ");
-                        String fechaFin = scannerPatrocinador.nextLine();
+                        System.out.println("Ingrese la fecha de fin del patrocinio (DD/MM/AAAA): ");
+                        String fechaFin = scannerPatrocinio.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(fechaFin);
-                            patrocinadores.setFechaFin(fecha);
+                            patrocinios.setFechaFin(fecha);
                             break;
                         } catch (ParseException e) {
                             System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
                         }
                     }
 
-                    controladorPatrocinador.patrocinadores.put(codigoPatrocinador, patrocinadores);
-                    System.out.println("Patrocinador agregado exitosamente.");
+                    controladorPatrocinio.patrocinios.put(codigoPatrocinio, patrocinios);
+                    System.out.println("Patrocinio agregado exitosamente.");
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 2:
-                    System.out.println("Ingrese el código del patrocinador que desea editar: ");
-                    String codigoEditar = scannerPatrocinador.nextLine();
-                    if (!controladorPatrocinador.patrocinadores.containsKey(codigoEditar)) {
-                        System.out.println("No se encontró el patrocinador con el código ingresado.");
+
+                    ConsoleUtils.cleanScreen();
+
+                    System.out.println("Ingrese el código del Patrocinio que desea editar: ");
+                    String codigoEditar = scannerPatrocinio.nextLine();
+                    if (!controladorPatrocinio.patrocinios.containsKey(codigoEditar)) {
+                        System.out.println("No se encontró el Patrocinio con el código ingresado.");
                         break;
                     }
-                    Patrocinador patrocinadorEditar = controladorPatrocinador.patrocinadores.get(codigoEditar);
+                    Patrocinio PatrocinioEditar = controladorPatrocinio.patrocinios.get(codigoEditar);
 
-                    System.out.println("Ingrese el nuevo nombre del patrocinador (actual: " + patrocinadorEditar.getNombre() + "): ");
-                    patrocinadorEditar.setNombre(scannerPatrocinador.nextLine());
+                    System.out.println("Ingrese el nuevo nombre del Patrocinio (actual: " + PatrocinioEditar.getNombre() + "): ");
+                    PatrocinioEditar.setNombre(scannerPatrocinio.nextLine());
 
-                    System.out.println("Ingrese el nuevo tipo de patrocinio (actual: " + patrocinadorEditar.getTipo() + "): ");
-                    patrocinadorEditar.setTipo(scannerPatrocinador.nextLine());
+                    System.out.println("Ingrese el nuevo tipo de patrocinio (actual: " + PatrocinioEditar.getTipo() + "): ");
+                    PatrocinioEditar.setTipo(scannerPatrocinio.nextLine());
 
-                    System.out.println("Ingrese el nuevo monto del patrocinio (actual: " + patrocinadorEditar.getMonto() + "): ");
-                    patrocinadorEditar.setMonto(scannerPatrocinador.nextDouble());
-                    scannerPatrocinador.nextLine(); 
+                    System.out.println("Ingrese el nuevo monto del patrocinio (actual: " + PatrocinioEditar.getMonto() + "): ");
+                    PatrocinioEditar.setMonto(scannerPatrocinio.nextDouble());
+                    scannerPatrocinio.nextLine(); 
 
                     // AQUI SE EDITAN LAS FECHAS
                     while (true) {
-                        System.out.println("Ingrese la nueva fecha de inicio del contrato (actual: " + dateFormatter.format(patrocinadorEditar.getFechaInicio()) + ", formato DD/MM/AAAA): ");
-                        String nuevaFechaInicio = scannerPatrocinador.nextLine();
+                        System.out.println("Ingrese la nueva fecha de inicio del patrocinio (actual: " + dateFormatter.format(PatrocinioEditar.getFechaInicio()) + ", formato DD/MM/AAAA): ");
+                        String nuevaFechaInicio = scannerPatrocinio.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(nuevaFechaInicio);
-                            patrocinadorEditar.setFechaInicio(fecha);
+                            PatrocinioEditar.setFechaInicio(fecha);
                             break;
                         } catch (ParseException e) {
                             System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
@@ -111,35 +120,48 @@ public class viewPatrocinios {
                     }
 
                     while (true) {
-                        System.out.println("Ingrese la nueva fecha de fin del contrato (actual: " + dateFormatter.format(patrocinadorEditar.getFechaFin()) + ", formato DD/MM/AAAA): ");
-                        String nuevaFechaFin = scannerPatrocinador.nextLine();
+                        System.out.println("Ingrese la nueva fecha de fin del patrocinio (actual: " + dateFormatter.format(PatrocinioEditar.getFechaFin()) + ", formato DD/MM/AAAA): ");
+                        String nuevaFechaFin = scannerPatrocinio.nextLine();
                         try {
                             Date fecha = dateFormatter.parse(nuevaFechaFin);
-                            patrocinadorEditar.setFechaFin(fecha);
+                            PatrocinioEditar.setFechaFin(fecha);
                             break;
                         } catch (ParseException e) {
                             System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
                         }
                     }
 
-                    System.out.println("Patrocinador editado exitosamente.");
+                    System.out.println("Patrocinio editado exitosamente.");
+
+                    ConsoleUtils.pause();
+
+
                     break;
 
                 case 3:
-                    System.out.println("Ingrese el código del patrocinador que desea eliminar: ");
-                    String codigoEliminar = scannerPatrocinador.nextLine();
-                    if (controladorPatrocinador.patrocinadores.remove(codigoEliminar) != null) {
-                        System.out.println("Patrocinador eliminado exitosamente.");
+
+                    ConsoleUtils.cleanScreen();
+
+                    System.out.println("Ingrese el código del Patrocinio que desea eliminar: ");
+                    String codigoEliminar = scannerPatrocinio.nextLine();
+                    if (controladorPatrocinio.patrocinios.remove(codigoEliminar) != null) {
+                        System.out.println("Patrocinio eliminado exitosamente.");
                     } else {
-                        System.out.println("No se encontró el patrocinador con el código ingresado.");
+                        System.out.println("No se encontró el Patrocinio con el código ingresado.");
                     }
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 4:
+
+                    ConsoleUtils.cleanScreen();
+
                     System.out.println("-------------------------");
-                    System.out.println("LISTA DE PATROCINADORES:");
-                    for (String codigo : controladorPatrocinador.patrocinadores.keySet()) {
-                        Patrocinador p = controladorPatrocinador.patrocinadores.get(codigo);
+                    System.out.println("LISTA DE PATROCINIOS:");
+                    for (String codigo : controladorPatrocinio.patrocinios.keySet()) {
+                        Patrocinio p = controladorPatrocinio.patrocinios.get(codigo);
                         System.out.println("-------------------------");
                         System.out.println("Código: " + codigo);
                         System.out.println("ID: " + p.getId());
@@ -150,6 +172,9 @@ public class viewPatrocinios {
                         System.out.println("Fecha de fin: " + dateFormatter.format(p.getFechaFin()));
                         System.out.println("-------------------------");
                     }
+
+                    ConsoleUtils.pause();
+                    
                     break;
 
                 case 5:
