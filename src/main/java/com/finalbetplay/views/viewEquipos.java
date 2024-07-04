@@ -2,11 +2,11 @@ package com.finalbetplay.views;
 import java.util.Scanner;
 
 import com.finalbetplay.Controller;
+import com.finalbetplay.clases.Entrenador;
 import com.finalbetplay.clases.Equipo;
 import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Jugador;
 import com.finalbetplay.clases.Partido;
-import com.finalbetplay.clases.Rol;
 import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewEquipos {
@@ -190,14 +190,19 @@ public class viewEquipos {
                     break;
 
                 case 7:
+
+                ConsoleUtils.cleanScreen();
                     
                 String codEquipoEntrenador = null;
                 Equipo equipoEntrenador = new Equipo();
                 
-                System.out.println("LISTA EQUIPOS --------");
+                System.out.println("----- LISTA EQUIPOS ------");
                 for (String codiEquipo : controladorEquipo.equipos.keySet()) {
                     equipoEntrenador = controladorEquipo.equipos.get(codiEquipo);
-                    System.out.println("Codigo Equipo: " + codiEquipo + " Nombre del equipo: " + equipoEntrenador.getNombre());
+                    System.out.println("-----");
+                    System.out.println("Codigo Equipo: " + codiEquipo);
+                    System.out.println(" Nombre del equipo: " + equipoEntrenador.getNombre());
+                    System.out.println("-----");
                 }
                 
                 System.out.println("Cuál es el equipo que deseas agregarle un entrenador: ");
@@ -205,22 +210,21 @@ public class viewEquipos {
                 equipoEntrenador = controladorEquipo.equipos.get(codEquipoEntrenador);
                 System.out.println("Usted ha elegido el equipo: " + equipoEntrenador.getNombre());
 
-                Rol rolEntrenador = new Rol();
+                Entrenador entrenadores = new Entrenador();
                 String codigoEntrenadorEquipo = null;
-                System.out.println("LISTA ENTRENADORES");
-                for (String codEntrenadores : controladorEquipo.rols.keySet()) {
-                    rolEntrenador = controladorEquipo.rols.get(codEntrenadores);
-                    if (rolEntrenador.getNombre() == "Entrenador") {
-                        System.out.println("Cod Entrenador: " + codEntrenadores + " Nombre Entrenador: " + rolEntrenador.getNombre());
-                    }else{
-                        System.out.println("No hay entrenadores :cx");
-                    }
+                System.out.println("----- LISTA ENTRENADORES -----");
+                for (String codEntrenadores : controladorEquipo.entrenadores.keySet()) {
+                    entrenadores = controladorEquipo.entrenadores.get(codEntrenadores);
+                    System.out.println("-----");
+                    System.out.println("Codigo entrenador: " + codEntrenadores);
+                    System.out.println("Nombre entrenador: " + entrenadores.getNombre());
+                    System.out.println("------");
                 }
 
                 System.out.println("Cuál entrenador estará en su equipo: ");
                 codigoEntrenadorEquipo = scannerEquipos.nextLine();
 
-                rolEntrenador = controladorEquipo.rols.get(codigoEntrenadorEquipo);
+                entrenadores = controladorEquipo.entrenadores.get(codigoEntrenadorEquipo);
 
                 equipoEntrenador.setEntrenador(codigoEntrenadorEquipo);
                 

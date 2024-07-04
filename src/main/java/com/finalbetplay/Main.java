@@ -3,6 +3,7 @@ package com.finalbetplay;
 import java.util.Scanner;
 
 import com.finalbetplay.utils.ConsoleUtils;
+import com.finalbetplay.views.viewArbitro;
 import com.finalbetplay.views.viewEntradas;
 import com.finalbetplay.views.viewEntrenador;
 import com.finalbetplay.views.viewEquipos;
@@ -38,6 +39,7 @@ public class Main {
             System.out.println("10. GESTION DE ENTRADAS");
             System.out.println("11. GESTION DE PATROCINIOS");
             System.out.println("12. GESTION DE ENTRENADORES");
+            System.out.println("13. GESTION DE ARBITROS");
             System.out.println("24. GESTION DE PATROCINADORES Y PUBLICIDAD");
             System.out.println("26. SALIR");
 
@@ -110,7 +112,14 @@ public class Main {
                 case 12:
                     viewEntrenador vistaEntrenadores = new viewEntrenador();
                     vistaEntrenadores.startEntrenador();
+
+                    break;
+
+                case 13: 
+                    viewArbitro vistaArbitro = new viewArbitro();
+                    vistaArbitro.startArbitro();
                     
+                    break;
 
                 case 24:
                     viewPatrocinadoresPublicidad vistaPatrocinadores = new viewPatrocinadoresPublicidad();

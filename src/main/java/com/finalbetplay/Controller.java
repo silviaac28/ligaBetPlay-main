@@ -3,6 +3,7 @@ package com.finalbetplay;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import com.finalbetplay.clases.Arbitro;
 import com.finalbetplay.clases.Comunicacion;
 import com.finalbetplay.clases.Entrada;
 import com.finalbetplay.clases.Entrenador;
@@ -37,6 +38,7 @@ public class Controller {
     public static Hashtable <String, Patrocinio> patrocinios = new Hashtable<>();
     public static Hashtable <String, MedioComunicacion> medioscomunicaciones = new Hashtable<>();
     public static Hashtable <String, Entrenador> entrenadores = new Hashtable<>();
+    public static Hashtable <String, Arbitro> arbitros = new Hashtable<>();
 
 
 

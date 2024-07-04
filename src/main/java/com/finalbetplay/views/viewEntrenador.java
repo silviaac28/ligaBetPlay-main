@@ -61,17 +61,28 @@ public class viewEntrenador {
 
                 case 2:
                     
+                    ConsoleUtils.cleanScreen();
+
                     Entrenador entrenadoreListar  = new Entrenador();
 
                     for (String codEntrenadores : controladorEntrenadores.entrenadores.keySet()) {
                         entrenadoreListar = controladorEntrenadores.entrenadores.get(codEntrenadores);
-                        System.out.println("Codigo entrenador" + codEntrenadores + "Nombre Entrenador: " + entrenadoreListar.getNombre() );
+                        System.out.println("Codigo entrenador: " + codEntrenadores);
+                        System.out.println("Nombre Entrenador: " + entrenadoreListar.getNombre());
+                        System.out.println("El entrenador tiene  " + entrenadoreListar.getExperiencia() + " años de experiencia");
                     }
+
+                    ConsoleUtils.pause();
 
                     break;
 
+                case 3:
+                    return;
+                    
+
                 default:
-                    throw new AssertionError();
+                    scannerEntrenador.close();
+                    break;
             }
 
         }
