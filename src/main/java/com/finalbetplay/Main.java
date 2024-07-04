@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.utils.ConsoleUtils;
 import com.finalbetplay.views.viewEntradas;
+import com.finalbetplay.views.viewEntrenador;
 import com.finalbetplay.views.viewEquipos;
 import com.finalbetplay.views.viewEstadio;
 import com.finalbetplay.views.viewJugador;
@@ -105,6 +106,10 @@ public class Main {
                     viewPatrocinios vistaPatrocinios = new viewPatrocinios();
                     vistaPatrocinios.startPatrocinio();
                     break;
+
+                case 12:
+                    viewEntrenador vistaEntrenadores = new viewEntrenador();
+                    vistaEntrenadores.startEntrenador();
                     
 
                 case 24:
