@@ -9,6 +9,7 @@ import com.finalbetplay.views.viewEntrenador;
 import com.finalbetplay.views.viewEquipos;
 import com.finalbetplay.views.viewEstadio;
 import com.finalbetplay.views.viewJugador;
+import com.finalbetplay.views.viewMediosComunicacion;
 import com.finalbetplay.views.viewNoticiasComunicados;
 import com.finalbetplay.views.viewPartido;
 import com.finalbetplay.views.viewPatrocinadoresPublicidad;
@@ -40,6 +41,7 @@ public class Main {
             System.out.println("11. GESTION DE PATROCINIOS");
             System.out.println("12. GESTION DE ENTRENADORES");
             System.out.println("13. GESTION DE ARBITROS");
+            System.out.println("15. GESTION DE MEDIOS DE COMUNICACION");
             System.out.println("24. GESTION DE PATROCINADORES Y PUBLICIDAD");
             System.out.println("26. SALIR");
 
@@ -120,6 +122,12 @@ public class Main {
                     vistaArbitro.startArbitro();
                     
                     break;
+
+                case 15:
+                    viewMediosComunicacion vistamMediosComunicacion = new viewMediosComunicacion();
+                    vistamMediosComunicacion.startMediosComunicaciones();
+                    break;
+                    
 
                 case 24:
                     viewPatrocinadoresPublicidad vistaPatrocinadores = new viewPatrocinadoresPublicidad();
