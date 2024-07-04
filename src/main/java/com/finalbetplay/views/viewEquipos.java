@@ -224,6 +224,8 @@ public class viewEquipos {
 
                 equipoEntrenador.setEntrenador(codigoEntrenadorEquipo);
                 
+                ConsoleUtils.pause();
+
                 break;
 
                 case 8:

@@ -25,7 +25,7 @@ public class viewPartido {
 
             System.out.println("\n-----MENÚ GESTION PARTIDOS-----\n");
 
-            System.out.println("1. Agregar nuevo partido");
+            // System.out.println("1. Agregar nuevo partido");
             System.out.println("2. Editar partido");
             System.out.println("3. Eliminar partido");
             System.out.println("4. Mostrar partidos");
