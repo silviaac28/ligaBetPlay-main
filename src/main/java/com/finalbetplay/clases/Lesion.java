@@ -7,19 +7,19 @@ public class Lesion {
     private int idJugador;
     private String tipo;
     private String gravedad;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private Date fechaInicioLesion;
+    private Date fechaFinRecuperacion;
     
     public Lesion() {
     }
 
-    public Lesion(int id, int idJugador, String tipo, String gravedad, Date fechaInicio, Date fechaFin) {
+    public Lesion(int id, int idJugador, String tipo, String gravedad, Date fechaInicioLesion, Date fechaFinRecuperacion) {
         this.id = id;
         this.idJugador = idJugador;
         this.tipo = tipo;
         this.gravedad = gravedad;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+        this.fechaInicioLesion = fechaInicioLesion;
+        this.fechaFinRecuperacion = fechaFinRecuperacion;
     }
 
     public int getId() {
@@ -54,20 +54,20 @@ public class Lesion {
         this.gravedad = gravedad;
     }
 
-    public Date getFechaInicio() {
-        return fechaInicio;
+    public Date getfechaInicioLesion() {
+        return fechaInicioLesion;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setfechaInicioLesion(Date fechaInicioLesion) {
+        this.fechaInicioLesion = fechaInicioLesion;
     }
 
-    public Date getFechaFin() {
-        return fechaFin;
+    public Date getFechaFinRecuperacion() {
+        return fechaFinRecuperacion;
     }
 
-    public void setFechaFin(Date fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFechaFinRecuperacion(Date fechaFinRecuperacion) {
+        this.fechaFinRecuperacion = fechaFinRecuperacion;
     }
 
 }
