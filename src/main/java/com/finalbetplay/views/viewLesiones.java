@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Lesion;
-import com.finalbetplay.clases.Patrocinio;
 import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewLesiones {
@@ -70,24 +69,24 @@ public class viewLesiones {
                         }
                     }
 
-                    while (true) {
-                        System.out.println("Ingrese la fecha de fin de la recuperación (DD/MM/AAAA): ");
-                        String fechaFin = scannerPatrocinio.nextLine();
-                        try {
-                            Date fecha = dateFormatter.parse(fechaFin);
-                            patrocinios.setFechaFin(fecha);
-                            break;
-                        } catch (ParseException e) {
-                            System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
-                        }
-                    }
+                    // while (true) {
+                    //     System.out.println("Ingrese la fecha de fin de la recuperación (DD/MM/AAAA): ");
+                    //     String fechaFin = scannerPatrocinio.nextLine();
+                    //     try {
+                    //         Date fecha = dateFormatter.parse(fechaFin);
+                    //         patrocinios.setFechaFin(fecha);
+                    //         break;
+                    //     } catch (ParseException e) {
+                    //         System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
+                    //     }
+                    // }
 
-                    controladorPatrocinio.patrocinios.put(codigoPatrocinio, patrocinios);
-                    System.out.println("Patrocinio agregado exitosamente.");
+                    // controladorPatrocinio.patrocinios.put(codigoPatrocinio, patrocinios);
+                    // System.out.println("Patrocinio agregado exitosamente.");
 
-                    ConsoleUtils.pause();
+                    // ConsoleUtils.pause();
 
-                    break;
+                    // break;
             
         }
 

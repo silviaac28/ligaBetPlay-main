@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.utils.ConsoleUtils;
 import com.finalbetplay.views.viewArbitro;
+import com.finalbetplay.views.viewCalendarioPartidos;
 import com.finalbetplay.views.viewEntradas;
 import com.finalbetplay.views.viewEntrenador;
 import com.finalbetplay.views.viewEquipos;
@@ -41,6 +42,7 @@ public class Main {
             System.out.println("11. GESTION DE PATROCINIOS");
             System.out.println("12. GESTION DE ENTRENADORES");
             System.out.println("13. GESTION DE ARBITROS");
+            System.out.println("14. CONSULTA CALENDARIO PARTIDOS");
             System.out.println("15. GESTION DE MEDIOS DE COMUNICACION");
             System.out.println("24. GESTION DE PATROCINADORES Y PUBLICIDAD");
             System.out.println("26. SALIR");
@@ -122,6 +124,11 @@ public class Main {
                     vistaArbitro.startArbitro();
                     
                     break;
+
+                case 14:
+
+                    viewCalendarioPartidos vistaCalendarioPartidos = new viewCalendarioPartidos();
+                    vistaCalendarioPartidos.startCalendarioPartidos();
 
                 case 15:
                     viewMediosComunicacion vistamMediosComunicacion = new viewMediosComunicacion();
