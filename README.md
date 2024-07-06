@@ -21,6 +21,7 @@ Gestión de contratos de patrocinio y publicidad.
 Emisión y gestión de comunicaciones oficiales y noticias dirigidas a aficionados, medios y equipos.
 
 
+
 *Proyecto desarrollado por:* 
 Silvia Angarita Castillo |
 Carlos Sánchez Díaz, usuario Github: @Tsammet
